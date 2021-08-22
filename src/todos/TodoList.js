@@ -1,9 +1,10 @@
 import React, { useEffect } from 'react';
-import './TodoList.css';
 import NewTodoForm from './NewTodoForm';
 import { connect } from 'react-redux';
 import TodoListItem from './TodoListItem';
 import { getTodos, getTodosLoading, getCompleteTodos, getIncompleteTodos} from './selectors';
+import styled from 'styled-components';
+
 
 import { loadTodos , removeTodoRequest, completeTodoRequest} from './thunks';
 
