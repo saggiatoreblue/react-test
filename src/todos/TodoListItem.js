@@ -1,13 +1,16 @@
 import React from 'react';
 import styled from 'styled-components';
 
+export const getStyleForDate = (startingDate, currentDate)  =>
+    (startingDate < new Date(currentDate - 86400000 * 5) ? 'red' : '#333');
+
 const TodoDate = styled.p`
     font-size: 16px;
 `;
 
 const TodoDateWarning = styled(TodoDate)`
-  color: ${props => (new Date(props.date) < new Date(Date.now() - 8640000 * 5)) ? 'red' : '#333'};
-`
+  color: ${props => getStyleForDate(new Date(props.date), Date.now())};
+`;
 
 const ActionButtonGrp = styled.div`
   display: block;
